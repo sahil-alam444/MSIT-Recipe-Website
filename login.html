@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSIT>RannaGhor | Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            box-shadow: 0 0 7px;
+            justify-content: space-between;
+            height: 5vw;
+            width: 100vw;
+            background-color: #d88537;
+            position: fixed;
+            z-index: 1;
+        }
+
+        .logo {
+            padding-left: 2vw;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 3vw;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .list {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        .list li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .list li {
+            margin-right: 2vw;
+            padding: 0 4px;
+            font-size: 18px;
+        }
+
+        .list li:hover {
+            background-color: rgb(218, 225, 151);
+            border-radius: 4px;
+        }
+
+        .list img {
+            height: 1.2em;
+        }
+
+        nav .menu-btn i {
+            color: #fff;
+            font-size: 22px;
+            cursor: pointer;
+            padding-right: 4vw;
+            display: none;
+        }
+
+        #click {
+            display: none;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            height: 35em;
+            border: 10vw solid #feffe1;
+        }
+
+        .left-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .right-section {
+            flex: 1;
+            padding: 20px;
+            background-color: peachpuff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .company-name {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .welcome-message {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .login-form {
+            max-width: 300px;
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .login-btn {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .google-login-btn {
+            background-color: #DB4437;
+        }
+
+        .create-account {
+            text-align: center;
+            color: #333;
+        }
+
+        .create-account a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .tile {
+            display: flex;
+            background-color: rgb(36, 36, 36);
+            padding: 5vw 10vw;
+        }
+
+        .left {
+            width: 50vw;
+        }
+
+        .left .social h5 {
+            color: #5d50b8;
+            font-size: 2.3vw;
+            padding-bottom: 1vw;
+        }
+
+        .left .social img {
+            border: 4px solid black;
+            background: linear-gradient(blue, #0f1c67);
+            border-radius: 2em;
+            margin-right: 14px;
+            height: 2.5em;
+        }
+
+        .right {
+            width: 50vw;
+            text-align: right;
+        }
+
+        .right .getit img {
+            height: 3em;
+            width: 9em;
+            margin: 0 0 3vw 2vw;
+        }
+
+        .right .links {
+            list-style: none;
+        }
+
+        .right .links li {
+            padding-top: 1vw;
+            font-size: 1.2vw;
+        }
+
+        .right .links a {
+            color: rgb(205, 18, 140);
+        }
+
+        .rights {
+            text-align: center;
+            background-color: black;
+            color: rgb(108 108 108);
+            padding: 1vw 0;
+            font-size: 1.5vw;
+            margin: 0;
+        }
+
+        @media screen and (max-width: 1000px) {
+
+            header {
+                height: 3em;
+            }
+
+            nav .menu-btn i {
+                display: block;
+            }
+
+            #click:checked~.menu-btn i:before {
+                content: "\f00d";
+            }
+
+            .list {
+                position: fixed;
+                top: 3em;
+                right: -100%;
+                background: #d49457;
+                height: 100vh;
+                width: 60%;
+                text-align: center;
+                display: block;
+                transition: all 0.4s ease;
+            }
+
+            #click:checked~.list {
+                right: 0;
+            }
+
+
+            .list li {
+                width: 100%;
+                margin: 40px 0;
+            }
+
+            .list li a {
+                text-align: center;
+                margin-right: -100%;
+                display: block;
+                font-size: 20px;
+                transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+
+            #click:checked~.list li a {
+                margin-right: 0px;
+            }
+
+            .container {
+                height: 50vw;
+            }
+
+            .company-name {
+                font-size: 22px;
+            }
+
+            .welcome-message {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">MSIT.RannaGhor</a>
+        </div>
+        <nav>
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+                <i class="fa fa-bars"></i>
+            </label>
+            <ul class="list">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="aboutus.html">ABOUT US</a></li>
+                <li><a href="#">RECIPE</a></li>
+                <li><a href="suggessions.html">SUGGESTION</a></li>
+                <li><a href="login.html"><img src="Images/account.png" alt=""></a></li>
+                <li><a href="#"><img src="Images/searchicon.png" alt=""></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="left-section">
+                <img class="left-image" src="Images/loginmsitpic.jpg" alt="Food Image">
+            </div>
+            <div class="right-section">
+                <div class="company-name">MSIT.RannaGhor</div>
+                <div class="welcome-message">Welcome to MSIT's RannaGhor</div>
+                <div class="login-form">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" placeholder="Enter your username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" placeholder="Enter your password">
+                    </div>
+                    <button class="login-btn">Sign In</button>
+                    <button class="login-btn google-login-btn">Login with Google</button>
+                    <div class="forgot-password">
+                        <a href="#">Forgot password</a>
+                    </div>
+                </div>
+                <div class="create-account">
+                    <a href="#">Create a new account</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="tile">
+            <div class="left">
+                <div class="social">
+                    <h5>Follow Us</h5>
+                    <a href="#"><img src="Images/fb.png" alt=""></a>
+                    <a href="#"><img src="Images/tweeter.png" alt=""></a>
+                    <a href="#"><img src="Images/ig.png" alt=""></a>
+                </div>
+            </div>
+            <div class="right">
+                <div class="getit">
+                    <a href="#"><img src="Images/applestore.png" alt="Apple Store"></a>
+                    <a href="#"><img src="Images/playstore.png" alt="Play Store"></a>
+                </div>
+                <ul class="links">
+                    <li><a href="#">Send Feedback</a></li>
+                    <li><a href="#">Recipes by Ingredients</a></li>
+                    <li><a href="#">Community Recipes</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">User Agreement</a></li>
+                    <li><a href="#">Accessibility Statement</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <p class="rights">All Rights Reserved &copy; MSIT.RannaGhor, Inc</p>
+        </div>
+    </footer>
+</body>
+
+</html>

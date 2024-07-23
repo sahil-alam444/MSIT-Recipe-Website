@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+
+.page_content{
+    display: flex;
+    flex-direction: column;
+    padding: 8em 0;    
+    column-gap: 20px;
+}
+.header_image_container{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 80px;
+    justify-content: space-evenly;
+}
+h1{
+     font-size: 30px; 
+    line-height: 14;
+    height: 243px;
+    width: 378px;
+    text-align: left;
+    margin-left: 0px;
+}
+h3{
+    font-size: 15px;
+    text-align: left;
+    font: bold;
+}
+
+img{
+    height: 40vw;
+}
+
+.recipe_summary{
+    display: flex;
+    color: #4a4a4a;
+    flex: 1;
+    text-align: center;
+    column-gap: 25px;
+    padding-left: 6PX;
+}
+.items1{
+    height: 75px;
+    width:  75px;
+    border: 2px solid grey;
+    box-shadow: 5px 5px 5px rgb(109, 99, 99);
+    text-align: center;
+    color: white;
+    background-color: #ffa600;
+}
+.items2{
+    height: 73px;
+    width:  73px;
+    border: 2px solid grey;
+    box-shadow: 5px 5px 5px rgb(109, 99, 99);
+    text-align: center;
+    color: white;
+    background-color: #ffa600;
+}
+.items3{
+    height: 75px;
+    width:  75px;
+    border: 2px solid grey;
+    box-shadow: 5px 5px 5px rgb(99, 109, 100);
+    text-align: center;
+    color: white;
+    background-color: #ffa600;
+}
+li{
+    font-family: Open Sans;
+    list-style-position: inside;
+    word-spacing: 2px;
+    FONT-size:1.7VW;
+}
+.btn-primary{
+    background-color: rgb(55, 192, 146);
+    color: #4815db;
+    font-size: larger;
+    padding: 10px;
+    border-radius: 26px;
+    border:2px solid aquamarine;
+    font-style: italic;
+    margin-bottom: 60px;
+}
+h2{
+    margin-bottom: 20px;
+    background-color: #feffcc;
+    text-shadow: 4px 4px 4px slateblue;
+}
+p{
+    margin-bottom: 25px;
+}
+p{
+    background-color: #ffd624;
+    padding-left: 20px;
+    font-size: 1.2VW;
+}
+h4{
+    background-color: #ffd624;
+    padding-left: 20px;
+}
+.stat{
+    display: flex;
+    flex-direction: column;
+    
+    box-shadow: 13px 13px 13px aquamarine;
+    
+    background-color: #ffd624;
+}
+.minerals-statistics{
+
+    position: relative;
+    
+    top: 20px;
+    height: 100px;
+    width: 100px;
+    padding-top: 35px;
+    border-radius: 6em;
+    margin-right: 0.4em;
+    background-color: #ffa600;
+    text-align: center;
+}
+#value{
+    font-size: 15px;
+    
+}
+.Ingredients_steps_container{
+    box-shadow: 13px 13px 13px aqua;
+    margin-bottom: 60px;
+    background-color:#ffd624;
+}
+
+
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 7px;
+    justify-content: space-between;
+    height: 5vw;
+    width: 100vw;
+    background-color: #d88537;
+    position: fixed;
+    z-index: 1;
+}
+
+.logo{
+    padding-left: 2vw;
+}
+
+.logo a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 3em;
+    font-family: monospace, sans-serif;
+}
+
+.list{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.list li a{
+    text-decoration: none;
+    color: black;
+}
+
+.list li{
+    margin-right: 2vw;
+    padding: 0 4px;
+    font-size: 18px;
+}
+
+.list li:hover{
+    background-color: rgb(218, 225, 151);
+    border-radius: 4px;
+}
+
+.list img{
+    height: 1.2em;
+}
+
+
+nav .menu-btn i {
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    padding-right: 4vw;
+    display: none;
+}
+
+#click {
+    display: none;
+}
+
+
+@media screen and (max-width: 1000px) {
+    nav .menu-btn i {
+        display: block;
+    }
+
+    #click:checked~.menu-btn i:before {
+        content: "\f00d";
+    }
+
+    .list {
+        position: fixed;
+        top: 3em;
+        right: -100%;
+        background: #d49457;
+        height: 100vh;
+        width: 60%;
+        text-align: center;
+        display: block;
+        transition: all 0.4s ease;
+        
+    }
+
+    #click:checked~.list {
+        right: 0;
+    }
+
+
+    .list li {
+        width: 100%;
+        margin: 40px 0;
+    }
+
+    .list li a {
+        text-align: center;
+        margin-right: -100%;
+        display: block;
+        font-size: 20px;
+        transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    #click:checked~.list li a {
+        margin-right: 0px;
+    }
+}
+
+.tagline {
+    text-align: center;
+    margin: 2vw 0;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: cursive, sans-serif;
+}

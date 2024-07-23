@@ -1,0 +1,137 @@
+@media screen and (max-width: 1000px) {
+    header {
+        height: 3em;
+    }
+    
+    nav .menu-btn i {
+        display: block;
+    }
+
+    #click:checked~.menu-btn i:before {
+        content: "\f00d";
+    }
+
+    .list {
+        position: fixed;
+        top: 3em;
+        right: -100%;
+        background: #d49457;
+        height: 100vh;
+        width: 60%;
+        text-align: center;
+        display: block;
+        transition: all 0.4s ease;
+        
+    }
+
+    #click:checked~.list {
+        right: 0;
+    }
+
+
+    .list li {
+        width: 100%;
+        margin: 40px 0;
+    }
+
+    .list li a {
+        text-align: center;
+        margin-right: -100%;
+        display: block;
+        font-size: 20px;
+        transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    #click:checked~.list li a {
+        margin-right: 0px;
+    }
+
+    main{
+        padding-top: 3em;
+    }
+
+    .slider img {
+        height: 11vw;
+        width: 11vw;
+    }
+
+    .slider .imgtxt {
+        font-size: 1.34vw;
+        bottom: 4.7em;
+    }
+
+    .srchbar {
+        height: 2.5em;
+    }
+
+    .srch {
+        height: 5vw;
+    }
+
+    .menu .menu_box {
+        width: 95%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 15px;
+    }
+
+    .left .social h5 {
+        font-size: 1.7em;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .bgslider .imgtxt a {
+        font-size: 2vw;
+        padding: 0.5vw 2vw;
+    }
+
+    .slider{
+        padding: 0;
+    }
+
+    .slider img {
+        height: 13vw;
+        width: 13vw;
+    }
+
+    .slider .imgtxt {
+        font-size: 1.57vw;
+        bottom: 4.5em;
+    }
+
+    .left .social img {
+        height: 1.5em;
+    }
+
+    .right .links li {
+        font-size: 0.8em;
+    }
+
+    .right .getit img {
+        height: 2em;
+        width: 6em;
+    }
+
+    .rights {
+        padding: 1em 0;
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+}
+
+
+@media screen and (max-width: 500px) {
+    header {
+        height: 2em;
+    }
+
+    .rights {
+        font-size: 0.8em;
+    }
+}
